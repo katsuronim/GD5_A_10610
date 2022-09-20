@@ -11,13 +11,10 @@ import com.example.gd5_a_10610.room.Note
 import kotlinx.android.synthetic.main.activity_note_adapter.view.*
 
 
-class NoteAdapter (private val notes: ArrayList<Note>, private val
-listener: OnAdapterListener) :
+class NoteAdapter (private val notes: ArrayList<Note>, private val listener: OnAdapterListener) :
     RecyclerView.Adapter<NoteAdapter.NoteViewHolder>() {
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int):
-            NoteViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NoteViewHolder {
         return NoteViewHolder(
-
             LayoutInflater.from(parent.context).inflate(R.layout.activity_note_adapter,parent, false)
         )
     }
@@ -35,8 +32,7 @@ listener: OnAdapterListener) :
         }
     }
     override fun getItemCount() = notes.size
-    inner class NoteViewHolder( val view: View) :
-        RecyclerView.ViewHolder(view)
+    inner class NoteViewHolder( val view: View): RecyclerView.ViewHolder(view)
     @SuppressLint("NotifyDataSetChanged")
     fun setData(list: List<Note>){
         notes.clear()
